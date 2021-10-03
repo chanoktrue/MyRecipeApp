@@ -23,6 +23,21 @@ struct Recipe: Identifiable {
     let course: Course
 }
 
+extension Course {
+    var title: String {
+        switch self {
+        case .all:
+            return "All"
+        case .starters:
+            return "Starters"
+        case .entrees:
+            return "Entrees"
+        case .desserts:
+            return "Desserts"
+        }
+    }
+}
+
 extension Recipe {
     
     static func all() -> [Recipe] {
